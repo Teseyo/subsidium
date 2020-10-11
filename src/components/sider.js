@@ -1,7 +1,8 @@
 import './../css/App.css'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons'
+import axios from 'axios'
 import { Layout, Menu, Breadcrumb } from 'antd'
 import Card from './card.js'
 import { Helmet } from 'react-helmet'
@@ -13,19 +14,8 @@ import Org from './../img/org/org.svg'
 import Nanogram from 'nanogram.js'
 import Backa from './../img/inf/backa.svg'
 
+import InstImg from './instImg'
 const instagramParser = new Nanogram()
-
-instagramParser.getMediaByUsername('subsidium_ppossvfu').then((media) => {
-    console.log(media)
-    console.log(media.profile.full_name)
-})
-
-var Image1
-Image1 = document.createElement('img')
-Image1.setAttribute('src', 'Znak1.gif')
-var Image2
-Image2 = document.createElement('img')
-Image2.setAttribute('src', 'Znak2.gif')
 
 const { Header, Content, Footer } = Layout
 
@@ -43,7 +33,25 @@ const Logo = styled.div`
     width: 20.5vh;
 `
 
+const CardContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    width: 850px;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+`
+
 const Lider = () => {
+    const [inst, setInst] = useState([])
+
+    useEffect(() => {
+        instagramParser.getMediaByUsername('subsidium_ppossvfu').then((media) => {
+            console.log(media.profile.edge_owner_to_timeline_media.edges)
+            setInst(media.profile.edge_owner_to_timeline_media.edges)
+            console.log('rernder', inst)
+        })
+    }, [])
     return (
         <Layout className="layout">
             <Header className="Header">
@@ -179,6 +187,11 @@ const Lider = () => {
                 </div>
                 <div className="BOrg">
                     <img src={Org} alt="org" className="Org" />
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <CardContainer>
+                        {inst ? inst.map((item) => <InstImg ur={item} />) : null}
+                    </CardContainer>
                 </div>
                 {/* <img src={Backa} alt="logo" style={{height: '500px'}} /> */}
                 <Card />
