@@ -1,0 +1,80 @@
+.site-layout-content {
+    background: #DEDEDE;
+    padding: 24px;
+    min-height: 280px;
+}
+.logo {
+    width: 120px;
+    height: 31px;
+    margin: -5px 12px 16px 0;
+    float: left;
+}
+[data-theme='dark'] .site-layout-content {
+    background: #8a8989;
+}
+[data-theme='dark'] .logo {
+    background: #8a8989;
+}
+
+.layout {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 82px;
+    text-align: left;
+}
+
+.Header {
+    background-color: #8a8989;
+}
+
+.Buttone {
+  border-radius: 20px;
+  background: #F1E851;
+  width: 500px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 79px;
+  white-space: nowrap;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  user-select: none;
+  display: inline-block;
+  border: none;
+}
+
+.CardN{
+  height: 350px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  z-index: 100;
+}
+
+.CardBack{
+  position: relative;
+  top: 500px;
+  z-index: 1;
+  height: 350px;
+}
+
+.Org {
+  height: 300px;
+}
+
+.BOrg {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 900px) {
+  .Buttone {
+  width: 350px;
+  font-size: 24px;
+  }
+  .CardN{
+    height: 200px;
+  }
+  }
