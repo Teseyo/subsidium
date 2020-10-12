@@ -15,6 +15,8 @@ import Nanogram from 'nanogram.js'
 import Backa from './../img/inf/backa.svg'
 
 import InstImg from './instImg'
+import Timer from './timer'
+import Timer2 from './Timer2'
 const instagramParser = new Nanogram()
 
 const { Header, Content, Footer } = Layout
@@ -151,8 +153,11 @@ const Lider = () => {
                 >
                     ДО ОТКРЫТИЯ “SUBSIDIUM-2020”
                     <br />
-                    осталось:
+                    осталось: 
+                    <Timer />
+                    <Timer2 />
                     <button className="Buttone">ОНЛАЙН РЕГИСТРАЦИЯ</button>
+                    
                 </div>
                 <div
                     style={{
