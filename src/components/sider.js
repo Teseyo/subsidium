@@ -1,5 +1,6 @@
 import './../css/App.css'
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons'
 import axios from 'axios'
@@ -15,8 +16,7 @@ import Nanogram from 'nanogram.js'
 import Backa from './../img/inf/backa.svg'
 
 import InstImg from './instImg'
-import Timer from './timer'
-import Timer2 from './Timer2'
+import Timer from './GenkaTimer.js'
 const instagramParser = new Nanogram()
 
 const { Header, Content, Footer } = Layout
@@ -93,10 +93,11 @@ const Lider = () => {
                         КОНТАКТЫ
                     </Menu.Item>
 
+                    <Link to={"instappos"}>
                     <Menu.Item
                         key="4"
                         onClick="   https://www.instagram.com/ppossvfu/"
-                        style={{ fontFamily: 'Montserrat', backgroundColor: '#6D6D6D' }}
+                        style={{ fontFamily: 'Montserrat', backgroundColor: '#6D6D6D' , color: "white"}}
                     >
                         <img
                             src="https://www.dropbox.com/s/sbdye83tfqleqhv/icons8-instagram%201.png?dl=1"
@@ -105,10 +106,12 @@ const Lider = () => {
                         />{' '}
                         PPOSSVFU
                     </Menu.Item>
+                    </Link>
+                    <Link to={"instasub"}>
                     <Menu.Item
                         key="5"
                         onClick="   https://www.instagram.com/ppossvfu/"
-                        style={{ fontFamily: 'Montserrat', backgroundColor: '#7BAC54' }}
+                        style={{ fontFamily: 'Montserrat', backgroundColor: '#7BAC54' ,color: "white"}}
                     >
                         <img
                             src="https://www.dropbox.com/s/sbdye83tfqleqhv/icons8-instagram%201.png?dl=1"
@@ -117,6 +120,7 @@ const Lider = () => {
                         />{' '}
                         SUBSIDIUM
                     </Menu.Item>
+                    </Link>
                 </Menu>
             </Header>
             <Content>
@@ -153,11 +157,12 @@ const Lider = () => {
                 >
                     ДО ОТКРЫТИЯ “SUBSIDIUM-2020”
                     <br />
-                    осталось: 
+                    осталось:
                     <Timer />
-                    <Timer2 />
-                    <button className="Buttone">ОНЛАЙН РЕГИСТРАЦИЯ</button>
-                    
+                    {/* <Timer />
+                    <Timer2 /> */}
+                    <Link to="/reg"><button className="Buttone" style={{color:  "#797474"}}>ОНЛАЙН РЕГИСТРАЦИЯ</button></Link>
+
                 </div>
                 <div
                     style={{
