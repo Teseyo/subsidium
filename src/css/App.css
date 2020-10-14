@@ -3,6 +3,11 @@
     padding: 24px;
     min-height: 280px;
 }
+
+.steps-content{
+  margin: 10px;
+}
+
 .logo {
     width: 120px;
     height: 31px;

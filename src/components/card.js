@@ -1,5 +1,6 @@
 import React from 'react'
 import { Steps, Button, message } from 'antd';
+import './../css/App.css'
 
 const { Step } = Steps;
 
@@ -10,19 +11,19 @@ const steps = [
     
   },
   {
-    title: 'Second',
+    title: 'Второй день',
     content: 'Second-content',
   },
   {
-    title: 'Last',
+    title: 'Третий день',
     content: 'Last-content',
   },
   {
-    title: 'Rofl',
+    title: 'Четвертый день',
     content: 'Rofl-content',
   },
   {
-    title: 'Rofl',
+    title: 'Пятый день',
     content: 'Rofl-content',
   },
 ];
@@ -48,15 +49,15 @@ export default class App extends React.Component {
   render() {
     const { current } = this.state;
     return (
-      <>
+      <div style={{margin:'100px'}}>
         <Steps current={current}>
           {steps.map(item => (
             <Step key={item.title} title={item.title} />
           ))}
         </Steps>
-        <div className="steps-content">{steps[current].content}</div>
-        <div className="steps-action">
-          {current < steps.length - 1 && (
+        <div className="steps-content" style={{margin:'10px'}}>{steps[current].content}</div>
+        <div className="steps-action" style={{margin:'10px'}}>
+          {/* {current < steps.length - 1 && (
             <Button type="primary" style={{backgroundColor:'light blue'}} onClick={() => this.next()}>
               Next
             </Button>
@@ -70,9 +71,9 @@ export default class App extends React.Component {
             <Button style={{ margin: '0 8px' }} onClick={() => this.prev()}>
               Previous
             </Button>
-          )}
+          )} */}
         </div>
-      </>
+      </div>
     );
   }
 }

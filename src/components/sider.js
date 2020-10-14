@@ -97,12 +97,12 @@ const Lider = () => {
                     <Menu.Item
                         key="4"
                         onClick="   https://www.instagram.com/ppossvfu/"
-                        style={{ fontFamily: 'Montserrat', backgroundColor: '#6D6D6D' , color: "white"}}
+                        style={{ fontFamily: 'Montserrat', backgroundColor: '#6D6D6D' , color: "white", marginRight:'15px'}}
                     >
                         <img
                             src="https://www.dropbox.com/s/sbdye83tfqleqhv/icons8-instagram%201.png?dl=1"
                             alt="logo"
-                            style={{ height: '24px', marginRight: '10px' }}
+                            style={{ height: '24px', marginRight: '10px', marginLeft: '10px' }}
                         />{' '}
                         PPOSSVFU
                     </Menu.Item>
@@ -111,12 +111,12 @@ const Lider = () => {
                     <Menu.Item
                         key="5"
                         onClick="   https://www.instagram.com/ppossvfu/"
-                        style={{ fontFamily: 'Montserrat', backgroundColor: '#7BAC54' ,color: "white"}}
+                        style={{ fontFamily: 'Montserrat', backgroundColor: '#7BAC54' ,color: "white", marginRight:'15px'}}
                     >
                         <img
                             src="https://www.dropbox.com/s/sbdye83tfqleqhv/icons8-instagram%201.png?dl=1"
                             alt="logo"
-                            style={{ height: '24px', marginRight: '10px' }}
+                            style={{ height: '24px', marginRight: '10px', marginLeft: '10px' }}
                         />{' '}
                         SUBSIDIUM
                     </Menu.Item>
