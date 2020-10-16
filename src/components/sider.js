@@ -17,6 +17,9 @@ import Backa from './../img/inf/backa.svg'
 
 import InstImg from './instImg'
 import Timer from './GenkaTimer.js'
+
+import Slider from './slider/slider'
+import Sliider from './Sliider.js'
 const instagramParser = new Nanogram()
 
 const { Header, Content, Footer } = Layout
@@ -43,6 +46,8 @@ const CardContainer = styled.div`
     margin-top: 20px;
     margin-bottom: 20px;
 `
+
+
 
 const Lider = () => {
     const [inst, setInst] = useState([])
@@ -195,9 +200,10 @@ const Lider = () => {
                         </div>
                     </div>
                 </div>
-                <div className="BOrg">
+                {/* <div className="BOrg">
                     <img src={Org} alt="org" className="Org" />
-                </div>
+                </div> */}
+                <Slider />
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <CardContainer>
                         {inst ? inst.map((item) => <InstImg ur={item} />) : null}
