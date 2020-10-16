@@ -4,7 +4,7 @@ import css from './Slide.module.scss';
 const Slide = ({ children, color }) => {
   return (
     <div className={css.container}>
-      <div className={css.content} style={{ background: color }} />
+      <img className={css.content} src={color} style={{width: "100%"}}/>
       <footer className={css.footer}>
         {children}
       </footer>

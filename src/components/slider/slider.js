@@ -1,12 +1,12 @@
 import './../../css/App.css'
-import './../../css/swiper-bundle.min.css';
+import './../../css/swiper-bundle.min.css'
 // import 'react-id-swiper/lib/styles/scss/swiper.scss';
-import React from 'react';
-import Swiper from 'react-id-swiper';
-import Slide from './slide.js';
+import React from 'react'
+import Swiper from 'react-id-swiper'
+import Slide from './slide.js'
 // import data from './../../data.json';
-import Img1 from './../../img/org/TS.jpg';
-import styled from 'styled-components';
+import photos from './../../img/org/index.ts'
+import styled from 'styled-components'
 
 const Img = styled.img`
     width: 270px;
@@ -16,56 +16,106 @@ const Img = styled.img`
     cursor: pointer;
 `
 
-const data=[
+const data = [
     {
-      "title": "Slide 2",
-      "color": "https://thumb.cloud.mail.ru/weblink/thumb/xw1/2vU9/cGtBneX1M/%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B0%20%D0%A1%D0%B0%D0%B9%D0%B0%D0%B0%D0%BD%D0%B0%20-%20%D0%BA%D1%83%D1%80%D0%B0%D1%82%D0%BE%D1%80.jpg?x-email=undefined",
+        title: 'Адамова Айыы - Куо - куратор',
+        color: photos.image1
     },
     {
-      "title": "Slide 2",
-      "color": "#c9b1bd"
+        title: 'Антонов Айсиэн - руководитель системных администраторов',
+        color: photos.image2
     },
     {
-      "title": "Slide 3",
-      "color": "#d5a29c"
+        title: 'Архангельская Анна - руководитель образовательной части',
+        color: photos.image3
     },
     {
-      "title": "Slide 4",
-      "color": "#82a7a6"
+        title: 'Архипова Людмила - заместитель руководителя',
+        color: photos.image4
     },
     {
-      "title": "Slide 5",
-      "color": "#e6af7a"
+        title: 'Гаврильева Клара - руководитель медиа - центра',
+        color: photos.image5
     },
     {
-      "title": "Slide 6",
-      "color": "#95be9e"
+        title: 'Гоголева Юлия - куратор',
+        color: photos.image6
     },
     {
-      "title": "Slide 7",
-      "color": "#97b5c5"
+        title: 'Гуляева Пелагея - куратор',
+        color: photos.image7
+    },
+    {
+        title: 'Дмитриев Ньургустаан - куратор',
+        color: photos.image8
+    },
+    {
+        title: 'Егорова Анна - куратор',
+        color: photos.image9
+    },
+    {
+        title: 'Иванов Афанасий - старший куратор',
+        color: photos.image10
+    },
+    {
+        title: 'Корякин Николай - руководитель Субсидиума',
+        color: photos.image11
+    },
+    {
+        title: 'Кривошапкина Кира - куратор',
+        color: photos.image12
+    },
+    {
+        title: 'Неустроева Айана - руководитель контент - группы',
+        color: photos.image13
+    },
+    {
+        title: 'Птицин Владимир - куратор',
+        color: photos.image14
+    },
+    {
+        title: 'Сидоров Айтал - куратор',
+        color: photos.image15
+    },
+    {
+        title: 'Степанова Юлия - куратор',
+        color: photos.image16
+    },
+    {
+        title: 'Тимофеева Сайаана - куратор',
+        color: photos.image17
+    },
+    {
+        title: 'Шарин Константин - куратор',
+        color: photos.image18
     }
-  ]
-  
+]
 
 const StickySlider = () => {
-  const params = {
-    slidesPerView: 3,
-  };
+    const params = {
+        slidesPerView: 3
+    }
 
-  return (
-    <div style={{display:'flex', jystifyContent:'center', width:'1310px', marginLeft:'12vw' }}>
-    <Swiper {...params} style={{jystifyContent:'center', alignItems:'center'}}>
-      {data.map((item, idx) => (
-        <div key={idx}>
-          <Slide style={{ backgroundImage: `url({$data.color})` }}>
-            {item.title}
-          </Slide>
+    return (
+        <div
+            style={{
+                display: 'flex',
+                jystifyContent: 'center',
+                width: '1310px',
+                marginLeft: '12vw'
+            }}
+        >
+            <Swiper {...params} style={{ jystifyContent: 'center', alignItems: 'center' }}>
+                {data.map((item, idx) => (
+                    <div key={idx}>
+                        <Slide color={item.color} style={{ backgroundImage: item.color }}>
+                            {item.title}
+                        </Slide>
+                    </div>
+                ))}
+            </Swiper>
         </div>
-      ))}
-    </Swiper>
-    </div>
-  );
-};
+    )
+}
 
-export default StickySlider;
+export default StickySlider
